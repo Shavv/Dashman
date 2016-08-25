@@ -49,7 +49,12 @@ f=FX_bullet_charge
 v=FX_bullet_charge_2
 charging=false
 weapon=0
-weaponmax=1
+weaponmax=2
+
+
+///stats
+stamina=20
+mstamina=20
 </string>
           </argument>
         </arguments>
@@ -224,6 +229,9 @@ if state=0
 
 if state=1
 {
+ if keyboard_check(key_up)    or pad_up    {if !place_meeting(x,y-movespeed/3,obj_block) {y-=movespeed/3}}
+ if keyboard_check(key_down)  or pad_down  {if !place_meeting(x,y+movespeed/3,obj_block) {y+=movespeed/3}}
+ 
  if shake&gt;0 {shake-=0.03}
  gamepad_set_vibration(0,shake,shake)
  blurr(80,15)
@@ -267,9 +275,21 @@ if state=0 or state=1
 {
  if (keyboard_check_pressed(key_roll) or pad_roll)
  {
-  direction=dir
-  speed=longdash
-  state=2
+  if stamina&gt;=3
+  {
+   stamina-=3
+   if keyboard_check(key_up)    or pad_up    {dir=90}
+   if keyboard_check(key_down)  or pad_down  {dir=270}
+   if keyboard_check(key_left)  or pad_left  {dir=180}
+   if keyboard_check(key_right) or pad_right {dir=0}
+   if (keyboard_check(key_up)   or pad_up)   and (keyboard_check(key_left)  or pad_left)  {dir=135}
+   if (keyboard_check(key_up)   or pad_up)   and (keyboard_check(key_right) or pad_right) {dir=45}
+   if (keyboard_check(key_down) or pad_down) and (keyboard_check(key_left)  or pad_left)  {dir=225}
+   if (keyboard_check(key_down) or pad_down) and (keyboard_check(key_right) or pad_right) {dir=315}  
+   direction=dir
+   speed=longdash
+   state=2
+  }
  }
 }
 
@@ -332,14 +352,42 @@ if state=2
           <argument>
             <kind>1</kind>
             <string>///weapon base
-if charging=false {shoot_dir=dir}
+//if charging=false {shoot_dir=dir}
 
-if keyboard_check_pressed(key_weapon) or pad_weapon
+//direction
+if weapon!=2
+{
+ if keyboard_check(key_up)    or pad_up    {shoot_dir=90}
+ if keyboard_check(key_down)  or pad_down  {shoot_dir=270}
+ if keyboard_check(key_left)  or pad_left  {shoot_dir=180}
+ if keyboard_check(key_right) or pad_right {shoot_dir=0}
+ if (keyboard_check(key_up)   or pad_up)   and (keyboard_check(key_left)  or pad_left)  {shoot_dir=135}
+ if (keyboard_check(key_up)   or pad_up)   and (keyboard_check(key_right) or pad_right) {shoot_dir=45}
+ if (keyboard_check(key_down) or pad_down) and (keyboard_check(key_left)  or pad_left)  {shoot_dir=225}
+ if (keyboard_check(key_down) or pad_down) and (keyboard_check(key_right) or pad_right) {shoot_dir=315}
+}
+
+if weapon=2
+{
+ if keyboard_check(key_left)  or pad_left  {shoot_dir=180}
+ if keyboard_check(key_right) or pad_right {shoot_dir=0}
+}
+
+if keyboard_check_pressed(key_weapon) or pad_weapon_right
 {
  if charging=false
  {
   weapon+=1
   if weapon&gt;weaponmax {weapon=0}
+ }
+}
+
+if pad_weapon_left
+{
+ if charging=false
+ {
+  weapon-=1
+  if weapon&lt;0 {weapon=weaponmax}
  }
 }
 </string>
@@ -372,7 +420,7 @@ if weapon=0
    charging=true
    if charge&lt;chargemax {charge+=0.1}
    if charge&gt;2 and creation=false {f=instance_create(x,y,FX_bullet_charge) creation=true}
-   if charge&gt;13 and !instance_exists(FX_bullet_charge_2) {v=instance_create(x,y,FX_bullet_charge_2) creation=true}
+   if charge&gt;15 and !instance_exists(FX_bullet_charge_2) {v=instance_create(x,y,FX_bullet_charge_2) creation=true}
   }
  } 
 
@@ -386,7 +434,18 @@ if weapon=0
    i.charge=charge
    i.direction=shoot_dir
    i.speed=bullet_speed
-   i.color=c_white
+   i.color=c_yellow
+   if charge&gt;5
+   {
+    if charge=chargemax
+    {
+     i.bounce=2
+    }
+     else
+    {
+     i.bounce=1
+    }
+   }
    charge=1
    creation=false
    if instance_exists(f) 
@@ -431,7 +490,7 @@ if weapon=0
             <string>///Weapon1: Saw gun
 if weapon=1
 {
- if alarm[0]=-1
+ if alarm[0]=-1 and stamina&gt;=3
  {
   if (keyboard_check(key_shoot) or pad_shoot)
   {
@@ -440,6 +499,7 @@ if weapon=1
    i.direction=shoot_dir
    i.speed=saw_speed
    alarm[0]=saw_delay
+   stamina-=3
   }
   else
   {
@@ -453,6 +513,124 @@ if weapon=1
    charging=false
   }
  } 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Weapon2: Rapid Shooting
+if weapon=2
+{
+ if shoot_dir!=180{if shoot_dir!=0{shoot_dir=0}}
+ if keyboard_check(key_shoot) or pad_shoot
+ {
+  charging=true
+  if alarm[0]=-1
+  {
+   alarm[0]=shoot_delay/2
+   i=instance_create(x,y,obj_bullet)
+   i.charge=charge
+   i.direction=shoot_dir
+   i.speed=bullet_speed
+   i.color=c_blue
+   if charge&gt;5
+   {
+    if charge=chargemax
+    {
+     i.bounce=2
+    }
+     else
+    {
+     i.bounce=1
+    }
+   }
+   charge=1
+   creation=false
+   if instance_exists(f) 
+   {
+    with (f)
+    {
+     instance_destroy()
+    }
+   }
+   if instance_exists(v) 
+   {
+    with (v)
+    {
+     instance_destroy()
+    }
+   }
+  }
+ }
+ if keyboard_check_released(key_shoot) or pad_shoot_release
+ {
+  charging=false
+ }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stats Base
+if stamina&gt;mstamina
+{
+ stamina=mstamina
+}
+ else
+{
+ stamina+=0.01
 }
 </string>
           </argument>
@@ -484,7 +662,7 @@ if state=2 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscal
 ///weapon
 if weapon=0 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_yellow,1)}
 if weapon=1 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_purple,1)}
-
+if weapon=2 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_blue,1)}
 
 draw_text(x,y-32,charge)
 </string>

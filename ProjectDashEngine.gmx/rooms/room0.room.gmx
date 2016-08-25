@@ -26,9 +26,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>4</page>
-    <xoffset>-101</xoffset>
-    <yoffset>-25</yoffset>
+    <page>0</page>
+    <xoffset>-183</xoffset>
+    <yoffset>-255</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -66,8 +66,9 @@
     <instance objName="obj_block" x="192" y="896" name="inst_EE876CEB" locked="0" code="" scaleX="10" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="1088" y="304" name="inst_89329DD8" locked="0" code="" scaleX="10" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumpthru" x="896" y="1056" name="inst_5792E792" locked="0" code="" scaleX="15.5" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_jumpthru" x="656" y="1168" name="inst_8E82C8AA" locked="0" code="" scaleX="12" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_jumpthru" x="512" y="1200" name="inst_8E82C8AA" locked="0" code="" scaleX="12" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumpthru" x="112" y="656" name="inst_EE72CB6E" locked="0" code="" scaleX="12" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="GAME" x="16" y="-16" name="inst_09F33BCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
