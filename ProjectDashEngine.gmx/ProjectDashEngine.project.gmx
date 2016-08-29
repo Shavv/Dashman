@@ -18,6 +18,7 @@
     <sprite>sprites\spr_bullet_charge</sprite>
     <sprite>sprites\spr_bullet_charge_2</sprite>
     <sprite>sprites\UI_stamina_bar</sprite>
+    <sprite>sprites\UI_health_bar</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

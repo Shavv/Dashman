@@ -53,8 +53,10 @@ weaponmax=2
 
 
 ///stats
-stamina=20
 mstamina=20
+stamina=mstamina
+mhp=20
+hp=mhp
 </string>
           </argument>
         </arguments>
@@ -664,7 +666,7 @@ if weapon=0 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_yellow,1)}
 if weapon=1 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_purple,1)}
 if weapon=2 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_blue,1)}
 
-draw_text(x,y-32,charge)
+//draw_text(x,y-32,charge)
 </string>
           </argument>
         </arguments>
