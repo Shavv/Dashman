@@ -29,6 +29,8 @@
 grav = 0;
 vspd = 0;
 hspd = 0;
+
+//other
 movespeed=7
 acc=0.2
 state=0
@@ -39,7 +41,7 @@ shortdash=40
 shakex=0.3
 shake=shakex
 charge=0
-chargemax=20
+chargemax=10
 shoot_delay=15
 bullet_speed=15
 saw_speed=10
@@ -233,7 +235,7 @@ if state=1
 {
  if keyboard_check(key_up)    or pad_up    {if !place_meeting(x,y-movespeed/3,obj_block) {y-=movespeed/3}}
  if keyboard_check(key_down)  or pad_down  {if !place_meeting(x,y+movespeed/3,obj_block) {y+=movespeed/3}}
- 
+ /*Dash release*/ //if keyboard_check_released(key_dash) or pad_dash_release {speed=speed/2}
  if shake&gt;0 {shake-=0.03}
  gamepad_set_vibration(0,shake,shake)
  blurr(80,15)
@@ -422,7 +424,7 @@ if weapon=0
    charging=true
    if charge&lt;chargemax {charge+=0.1}
    if charge&gt;2 and creation=false {f=instance_create(x,y,FX_bullet_charge) creation=true}
-   if charge&gt;15 and !instance_exists(FX_bullet_charge_2) {v=instance_create(x,y,FX_bullet_charge_2) creation=true}
+   if charge&gt;chargemax-5 and !instance_exists(FX_bullet_charge_2) {v=instance_create(x,y,FX_bullet_charge_2) creation=true}
   }
  } 
 
@@ -632,7 +634,7 @@ if stamina&gt;mstamina
 }
  else
 {
- stamina+=0.01
+ stamina+=0.01+(stamina/1000)
 }
 </string>
           </argument>

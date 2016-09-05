@@ -19,12 +19,21 @@
     <sprite>sprites\spr_bullet_charge_2</sprite>
     <sprite>sprites\UI_stamina_bar</sprite>
     <sprite>sprites\UI_health_bar</sprite>
+    <sprite>sprites\spr_ai</sprite>
+    <sprites name="testing">
+      <sprite>sprites\spr_cannon</sprite>
+      <sprite>sprites\spr_cannon_bullet</sprite>
+      <sprite>sprites\spr_test_wall</sprite>
+      <sprite>sprites\spr_block_spawner</sprite>
+      <sprite>sprites\spr_big_block</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\key_init.gml</script>
     <script>scripts\blurr.gml</script>
+    <script>scripts\scr_shake_view.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sh_CRT.shader</shader>
@@ -43,6 +52,17 @@
     </objects>
     <object>objects\GAME</object>
     <object>objects\obj_CRT</object>
+    <object>objects\obj_AI</object>
+    <objects name="parent">
+      <object>objects\enemy_parent</object>
+    </objects>
+    <objects name="Testing">
+      <object>objects\test_cannon</object>
+      <object>objects\test_projectile</object>
+      <object>objects\test_wall</object>
+      <object>objects\test_block_spawner</object>
+      <object>objects\test_moving_block</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
