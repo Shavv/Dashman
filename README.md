@@ -1,3 +1,3 @@
 # Dashman
 
-test file
+Dashman initial project file
