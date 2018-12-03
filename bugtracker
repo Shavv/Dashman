@@ -1,2 +1,9 @@
 - Collision responds weird with wall-clinging sometimes
 - Dashing down makes the sprite reset often resulting in sprite blinking
+- dashing up into the ceiling gives a constant dash and vibration
+- dodging fails to take stamina anymore
+- arms need to extend for longer during the dash so they provide more protection (projectile negation and hitbox)
+- laser needs to be in the build again because it wasnt mapped to the controller when I tried it. also with the new art
+- When you've dodged downward into the ground and you stand, you should automatically fire in the direction your facing, not downwards
+- the rumble feature while dashing into solid objects is going crazy. also dashing into something should cause a wall cling/ceilingcling/crouch to happen instead of continued dash animation.
+- the arm dissapear when you're clinging to a wall...maybe they should just become mostly transparent instead of totally dissappearing because it's jarring for them to just be gone. Even better it'd be nice if, when there's overlap that just what is overlapping becomes super transparent.
