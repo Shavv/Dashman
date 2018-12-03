@@ -1,1 +1,2 @@
-
+- Collision responds weird with wall-clinging sometimes
+- Dashing down makes the sprite reset often resulting in sprite blinking
