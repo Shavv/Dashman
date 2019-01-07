@@ -43,7 +43,7 @@ state=0
 dir=0
 shoot_dir=0
 shoot_dir_r=0
-longdash=20
+longdash=25
 shortdash=40
 shakex=0.3
 shake=shakex
@@ -58,9 +58,9 @@ creation=false
 f=FX_bullet_charge
 v=FX_bullet_charge_2
 charging=false
-weapon=3
+weapon=0
 weaponmax=3
-
+punchstate=0
 
 ///stats
 mstamina=20
@@ -71,6 +71,30 @@ hp=mhp
 //etc.
 oth=obj_cam
 image_ignore=spr_mc_hitbox
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///make blur
+afterimage(80,20)
 </string>
           </argument>
         </arguments>
@@ -287,8 +311,9 @@ if state=0
 {
  if place_meeting(x,y+1,obj_block) or (place_meeting(x,y+1,obj_jumpthru))
  {
-  if (keyboard_check(key_right) or pad_right) {image_xscale= 1 set_image_step(spr_mc_run,0.3)}
-  if (keyboard_check(key_left) or pad_left)   {image_xscale=-1 set_image_step(spr_mc_run,0.3)}
+  if (keyboard_check(key_right) or pad_right) and (!keyboard_check(key_left) and !pad_left) {image_xscale= 1 set_image_step(spr_mc_run,0.3)}
+  if (keyboard_check(key_left) or pad_left) and (!keyboard_check(key_right) and !pad_right)   {image_xscale=-1 set_image_step(spr_mc_run,0.3)}
+  if (keyboard_check(key_left) and keyboard_check(key_right)) or (pad_left and pad_right) {set_image_step(spr_mc_idle,0.15)}
   
   if ((!keyboard_check(key_right) and (!pad_left)) and (!keyboard_check(key_left) and !pad_right))
   {
@@ -490,7 +515,7 @@ if state=0 and alarm[1]=-1
 
 if state=1
 {
- if speed&gt;0 {blurr(80,15)}
+ //if speed&gt;0 {blurr(80,15)}
  /*Dash release*/ //if keyboard_check_released(key_dash) or pad_dash_release {speed=speed/2}
  if shake&gt;0 {shake-=0.03}
  gamepad_set_vibration(0,shake,shake)
@@ -757,7 +782,7 @@ if state=10
  if (keyboard_check(key_down) or pad_down) and (keyboard_check(key_right) or pad_right) {shoot_dir=315}  //down right
  if crouching=true {if image_xscale=1 {shoot_dir=0 shoot_dir_r=0} else {shoot_dir=180 shoot_dir_r=180}}
  
-
+/*
 if keyboard_check_pressed(key_weapon) or pad_weapon_right
 {
  if charging=false
@@ -800,7 +825,7 @@ if state=0 or state=1
 {
  if (keyboard_check(key_shoot) or pad_shoot)
  {
-  if charge=false {weapon=0}
+  //if charge=false {weapon=0}
  }
  
   
@@ -1023,13 +1048,13 @@ if weapon=2
           <argument>
             <kind>1</kind>
             <string>///Weapon3: Laser weapon
-if (keyboard_check(key_shooti) or pad_shooti)
-{
- if charge=false {weapon=3}
-}
-
 if weapon=3
-{
+{ 
+ if (keyboard_check(key_shooti) or pad_shooti)
+ {
+  //
+ }
+
  if !keyboard_check(key_shooti) and !pad_shooti
  {
   charge=false
@@ -1099,6 +1124,35 @@ f_movespeed=movespeed+b_movespeed
 if b_movespeed &lt; -movespeed {b_movespeed=-movespeed}
 longdash=(f_movespeed*2)+6
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///blur
+if state!=2
+{
+ if alarm[11]=-1 {alarm[11]=5}
+}
+ else
+{
+ alarm[11]=-1
+}
 </string>
           </argument>
         </arguments>
@@ -1214,25 +1268,36 @@ if end_animation=true {image_speed=0 image_index=image_number-1}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///color
-draw_self()
-/*
-if state=0  draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_red,1)
-if state=1  draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1)
-if state=2  draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_lime,1)
-if state=10 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_red,random_range(0,1))
-
-///weapon
-if weapon=0 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_yellow,1)}
-if weapon=1 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_purple,1)}
-if weapon=2 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir,c_blue,1)}
-if weapon=3 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir_r,c_lime,1)}
-
-
-//draw_text(x,y-32,charge)
-
-
+            <string>///Weapon3: Laser weapon
+if weapon=3
+{
+ if keyboard_check(key_shooti) or pad_shooti
+ {
+  scr_laser_weapon()
+  charge=true
+ }
+}
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -1252,16 +1317,24 @@ if weapon=3 {draw_sprite_ext(dir_pointer,-1,x,y,1,1,shoot_dir_r,c_lime,1)}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Weapon3: Laser weapon
-/*
-if weapon=3
+            <string>///Powerup0:
+if state=1 {punchstate+=0.3} else {punchstate=0}
+if state=2 {pp+=0.3} else {pp=0}
+
+//image_xscale=1
+if state!=2 and state!=1.5
 {
- if keyboard_check(key_shooti) or pad_shooti
- {
-  scr_laser_weapon()
-  charge=true
- }
+ if dir=0   or dir=180 {draw_sprite_ext(spr_backarm_punch_straight,punchstate,x+(8*image_xscale),y-10,image_xscale,1,0,c_white,0.8)     draw_self() draw_sprite_ext(spr_arm_punch_straight,punchstate,x+(-20*image_xscale),y-10,image_xscale,1,0,c_white,0.8)}
+ if dir=45  or dir=135 {draw_sprite_ext(spr_backarm_punch_diagnal_up,punchstate,x+(8*image_xscale),y-10,image_xscale,1,0,c_white,0.8)   draw_self() draw_sprite_ext(spr_arm_punch_diagnal_up,punchstate,x+(-20*image_xscale),y-10,image_xscale,1,0,c_white,0.8) }
+ if dir=90             {draw_sprite_ext(spr_backarm_punch_up,punchstate,x+(8*image_xscale),y-10,image_xscale,1,0,c_white,0.8)           draw_self() draw_sprite_ext(spr_arm_punch_up,punchstate,x+(-20*image_xscale),y-10,image_xscale,1,0,c_white,0.8) }
+ if dir=270            {draw_sprite_ext(spr_backarm_punch_down,punchstate,x+(8*image_xscale),y-10,image_xscale,1,0,c_white,0.8)         draw_self() draw_sprite_ext(spr_arm_punch_down,punchstate,x+(-20*image_xscale),y-10,image_xscale,1,0,c_white,0.8) }
+ if dir=315 or dir=225 {draw_sprite_ext(spr_backarm_punch_diagnal_down,punchstate,x+(8*image_xscale),y-10,image_xscale,1,0,c_white,0.8) draw_self() draw_sprite_ext(spr_arm_punch_diagnal_down,punchstate,x+(-20*image_xscale),y-10,image_xscale,1,0,c_white,0.8) }
 }
+ else
+{
+ if state=2 {draw_sprite_ext(spr_backarm_dodge,pp,x+(8*image_xscale),y-10,image_xscale,1,0,c_white,0.8)     draw_self() draw_sprite_ext(spr_arm_dodge,pp,x+(-20*image_xscale),y-10,image_xscale,1,0,c_white,0.8)} else {draw_self()}
+}
+
 </string>
           </argument>
         </arguments>

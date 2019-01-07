@@ -1,0 +1,436 @@
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Converting GML script: ${project_dir}\scripts\key_init\key_init.gml
+Converted string - line 16: 'P' -> "P"
+
+Converting GML script: ${project_dir}\scripts\blurr\blurr.gml
+Converted description /// @description blurr(80,5,color)/// @param 80
+/// @param 5
+/// @param color
+
+Converting GML script: ${project_dir}\scripts\afterimage\afterimage.gml
+Converted description /// @description afterimage(80,5)/// @param 80
+/// @param 5
+
+Converting GML script: ${project_dir}\scripts\screen_shake\screen_shake.gml
+Converted description /// @description screen_shake(strenght)/// @param strenght
+
+Converting GML script: ${project_dir}\scripts\scr_shake_view\scr_shake_view.gml
+Converted builtin - line 3: view_xview+=-(argument0/2)+random(argument0) -> __view_set( e__VW.XView, 0, __view_get( e__VW.XView, 0 ) + (-(argument0/2)+random(argument0)) )
+Converted builtin - line 4: view_yview+=-(argument0/2)+random(argument0) -> __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) + (-(argument0/2)+random(argument0)) )
+Converted description /// @description scr_shake_view(strengt)/// @param strengt
+
+Converting GML script: ${project_dir}\scripts\sprite_bullet_shooting\sprite_bullet_shooting.gml
+Converted description /// @description sprite_bullet_shooting()
+
+Converting GML script: ${project_dir}\scripts\set_image_step\set_image_step.gml
+Converted description /// @description set_image_step(image,speed)/// @param image
+/// @param speed
+
+Converting GML script: ${project_dir}\scripts\set_image_stop\set_image_stop.gml
+Converted description /// @description set_image_stop(image,speed)/// @param image
+/// @param speed
+
+Converting GML script: ${project_dir}\scripts\effect_create_fx\effect_create_fx.gml
+Converted description /// @description effect_create_fx(x,y,instance)/// @param x
+/// @param y
+/// @param instance
+
+!!! Font fnt_pause uses a font (Arial Black) not installed on this system - Font has NOT been regenerated
+Converting GML script: ${project_dir}\objects\obj_player\Create_0.gml
+Converted description /// @description platform init
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_11.gml
+Converted description /// @description make blur
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_3.gml
+Converted description /// @description shooting image timer
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_2.gml
+Converted description /// @description cling fall
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_1.gml
+Converted description /// @description When alarm is running long dash is disabled
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_0.gml
+Converted description /// @description shooter timer
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_2.gml
+Converted description /// @description reset test room if hp is 0
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_0.gml
+Converted description /// @description Keys init
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_d52c0b7b-be24-4da2-b129-0b034c779925.gml
+Converted description /// @description move outside
+
+Converting GML script: ${project_dir}\objects\obj_player\Other_7.gml
+Converted description /// @description animation end
+
+Converting GML script: ${project_dir}\objects\obj_player\Draw_0.gml
+Converted description /// @description Weapon3: Laser weapon
+
+Converting GML script: ${project_dir}\objects\obj_cam\Create_0.gml
+Converted description /// @description (full)screen and cam_move/// @param full
+
+Converting GML script: ${project_dir}\objects\obj_cam\Step_2.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_xview = x-view_wview/2 -> __view_set( e__VW.XView, 0, x-view_wview/2 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 3: view_yview = y-view_hview/2 -> __view_set( e__VW.YView, 0, y-view_hview/2 )
+Converted builtin - line 4: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description view follow cam
+Converted builtin - line 4: view_xview[0] = median(0, __view_get( e__VW.XView, 0 ), room_width - __view_get( e__VW.WView, 0 )) -> __view_set( e__VW.XView, 0, median(0, __view_get( e__VW.XView, 0 ), room_width - __view_get( e__VW.WView, 0 )) )
+Converted builtin - line 5: view_yview[0] = median(0, __view_get( e__VW.YView, 0 ), room_height - __view_get( e__VW.HView, 0 )) -> __view_set( e__VW.YView, 0, median(0, __view_get( e__VW.YView, 0 ), room_height - __view_get( e__VW.HView, 0 )) )
+Converted builtin - line 2: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: ${project_dir}\objects\obj_cam\Step_0.gml
+Converted builtin - line 9: view_wview=dw/global.zoomfactor -> __view_set( e__VW.WView, 0, dw/global.zoomfactor )
+Converted builtin - line 10: view_hview=dh/global.zoomfactor -> __view_set( e__VW.HView, 0, dh/global.zoomfactor )
+Converted description /// @description move towards player
+
+Converting GML script: ${project_dir}\objects\obj_saw\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\obj_saw\Step_0.gml
+Converted description /// @description -
+
+Converting GML script: ${project_dir}\objects\obj_saw\Collision_9b20ed1d-bcd3-4cb8-a3ec-5d2bd2432ac6.gml
+Converted description /// @description stop
+
+Converting GML script: ${project_dir}\objects\obj_saw\Collision_911a64d8-c2d1-41de-991c-b6d26c64f4c5.gml
+Converted description /// @description stop
+
+Converting GML script: ${project_dir}\objects\obj_bullet\Draw_0.gml
+Converted description /// @description sprite
+
+Converting GML script: ${project_dir}\objects\BLUR\Step_0.gml
+Converted description /// @description fade
+
+Converting GML script: ${project_dir}\objects\BLUR\Draw_0.gml
+Converted description /// @description draw
+
+Converting GML script: ${project_dir}\objects\FX_AFTERIMAGE\Alarm_0.gml
+Converted description /// @description --
+
+Converting GML script: ${project_dir}\objects\FX_AFTERIMAGE\Step_0.gml
+Converted description /// @description fade
+
+Converting GML script: ${project_dir}\objects\FX_AFTERIMAGE\Draw_0.gml
+Converted description /// @description draw
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge\Create_0.gml
+Converted description /// @description rotate
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge\Step_2.gml
+Converted description /// @description stay at player
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge\Step_0.gml
+Converted description /// @description rotate
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge\Draw_0.gml
+Converted description /// @description draw
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge_2\Create_0.gml
+Converted description /// @description rotate
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge_2\Step_2.gml
+Converted description /// @description stay at player
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge_2\Step_0.gml
+Converted description /// @description rotate
+
+Converting GML script: ${project_dir}\objects\FX_bullet_charge_2\Draw_0.gml
+Converted description /// @description draw
+
+Converting GML script: ${project_dir}\objects\FX_bullet_shot\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\FX_bullet_shot\Step_2.gml
+Converted description /// @description set position
+
+Converting GML script: ${project_dir}\objects\FX_bullet_shot\Step_0.gml
+Converted description /// @description image alpha and destroy
+
+Converting GML script: ${project_dir}\objects\POWERUP\Create_0.gml
+Converted description /// @description UI
+
+Converting GML script: ${project_dir}\objects\POWERUP\Step_0.gml
+Converted description /// @description menu selection
+
+Converting GML script: ${project_dir}\objects\POWERUP\Draw_0.gml
+Converted description /// @description draw UI
+
+Converting GML script: ${project_dir}\objects\GAME\Create_0.gml
+Converted description /// @description game init
+
+Converting GML script: ${project_dir}\objects\GAME\Draw_64.gml
+Converted description /// @description UI
+
+Converting GML script: ${project_dir}\objects\obj_background\Create_0.gml
+Converted description /// @description xxx
+
+Converting GML script: ${project_dir}\objects\obj_background\Draw_0.gml
+Converted description /// @description draw background
+
+Converting GML script: ${project_dir}\objects\obj_controller_pause\Create_0.gml
+Converted description /// @description  Declare variables for pause event
+
+Converting GML script: ${project_dir}\objects\obj_controller_pause\Step_0.gml
+Converted builtin - line 41: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 41: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description  Check for pause key pressed / unpause
+
+Converting GML script: ${project_dir}\objects\obj_controller_pause\Draw_0.gml
+Converted builtin - line 14: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 16: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 14: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 16: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 16: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 16: view_hview -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: ${project_dir}\objects\obj_AI\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\obj_AI\Step_0.gml
+Converted description /// @description Platform movement
+
+Converting GML script: ${project_dir}\objects\obj_AI\Draw_0.gml
+Converted description /// @description draw
+
+Converting GML script: ${project_dir}\objects\enemy_parent\Alarm_11.gml
+Converted description /// @description set false
+
+Converting GML script: ${project_dir}\objects\enemy_parent\Step_1.gml
+Converted description /// @description hp
+
+Converting GML script: ${project_dir}\objects\enemy_parent\Collision_88201f00-cb69-4e97-8e3e-ffcb7d39b8ac.gml
+Converted description /// @description dmg
+
+Converting GML script: ${project_dir}\objects\enemy_parent\Other_4.gml
+Converted description /// @description hit
+
+Converting GML script: ${project_dir}\objects\test_cannon\Create_0.gml
+Converted description /// @description test init
+
+Converting GML script: ${project_dir}\objects\test_cannon\Alarm_0.gml
+Converted description /// @description create bullet
+
+Converting GML script: ${project_dir}\objects\test_projectile\Collision_40ba61aa-7c68-4a47-8135-e8189c637a18.gml
+Converted description /// @description fade out
+
+Converting GML script: ${project_dir}\objects\test_projectile\Collision_fdcd18e7-1c43-4949-bb81-98776f41ce71.gml
+Converted description /// @description 
+
+Converting GML script: ${project_dir}\objects\test_block_spawner\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\test_block_spawner\Alarm_1.gml
+Converted description /// @description create
+
+Converting GML script: ${project_dir}\objects\test_block_spawner\Alarm_0.gml
+Converted description /// @description create
+
+Converting GML script: ${project_dir}\objects\test_block_spawner\Step_0.gml
+Converted description /// @description spawn blocks
+
+Converting GML script: ${project_dir}\objects\test_moving_block\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\test_moving_block\Step_0.gml
+Converted description /// @description moving
+
+Converting GML script: ${project_dir}\objects\obj_rain\Create_0.gml
+Converted description /// @description Rain System
+
+Converting GML script: ${project_dir}\objects\obj_rain\Step_0.gml
+Converted description /// @description particle
+
+Converting GML script: ${project_dir}\objects\enemy_eye_bullet\Collision_3ff970d7-1fc9-45e1-a068-386e4f9d1981.gml
+Converted description /// @description fade out
+
+Converting GML script: ${project_dir}\objects\enemy_eye_bullet\Collision_6430df0a-cbad-4e04-becb-e75fde32e01b.gml
+Converted description /// @description destroy
+
+Converting GML script: ${project_dir}\objects\enemy_eye\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\enemy_eye\Step_0.gml
+Converted description /// @description angle calculations
+
+Converting GML script: ${project_dir}\objects\enemy_eye_drone\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\enemy_eye_drone\Step_0.gml
+Converted description /// @description rotate around the eye
+
+Converting GML script: ${project_dir}\objects\enemy_bird_target\Step_0.gml
+Converted description /// @description create curve
+
+Converting GML script: ${project_dir}\objects\enemy_bird_target\Collision_ad750af6-f44a-4c33-aa3c-c6b59db330c7.gml
+Converted description /// @description destroy when contact with creator
+
+Converting GML script: ${project_dir}\objects\enemy_bird\Create_0.gml
+Converted description /// @description init variables
+
+Converting GML script: ${project_dir}\objects\enemy_bird\Alarm_1.gml
+Converted description /// @description increase shoottimer
+
+Converting GML script: ${project_dir}\objects\enemy_bird\Alarm_0.gml
+Converted description /// @description shoot timer
+
+Converting GML script: ${project_dir}\objects\enemy_bird\Step_0.gml
+Converted description /// @description movement
+
+Converting GML script: ${project_dir}\objects\enemy_bird\Draw_0.gml
+Converted description /// @description draw self with direction
+
+Converting GML script: ${project_dir}\objects\enemy_brid_diver\Create_0.gml
+Converted description /// @description init variables
+
+Converting GML script: ${project_dir}\objects\enemy_brid_diver\Alarm_0.gml
+Converted description /// @description shoot timer
+
+Converting GML script: ${project_dir}\objects\enemy_brid_diver\Step_0.gml
+Converted description /// @description movement
+
+Converting GML script: ${project_dir}\objects\enemy_brid_diver\Draw_0.gml
+Converted description /// @description draw self with direction
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bomber\Create_0.gml
+Converted description /// @description init variables
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bomber\Alarm_0.gml
+Converted description /// @description shoot timer
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bomber\Step_0.gml
+Converted description /// @description movement
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bomber\Draw_0.gml
+Converted description /// @description draw self with direction
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bullet\Collision_1cbbd947-6201-4da7-9243-4017e879af6b.gml
+Converted description /// @description fade out
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bullet\Collision_e665b29d-2889-4351-8a0b-c6a5725a9971.gml
+Converted description /// @description destroy
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bomb\Collision_be0c5540-d7c1-446a-bf5b-b4d4baed6dbb.gml
+Converted description /// @description fade out
+
+Converting GML script: ${project_dir}\objects\enemy_bird_bomb\Collision_7baa4ae7-de22-450d-bec4-f4bd44e34eea.gml
+Converted description /// @description destroy
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Alarm_1.gml
+Converted description /// @description sticked reset
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Alarm_0.gml
+Converted description /// @description release
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Step_0.gml
+Converted description /// @description physics
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Collision_6ae89b00-3a96-4b63-82ef-ca7de2c9b736.gml
+Converted description /// @description reverse
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Collision_06dc3792-9d94-436a-94f5-5e637e2b7df2.gml
+Converted description /// @description move outside
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Collision_5b1e6081-541c-4d46-a559-1a70db4d5cf4.gml
+Converted description /// @description move outside
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Collision_eaa7fe48-735d-495d-98f4-8e2b661fd833.gml
+Converted description /// @description stick to player
+
+Converting GML script: ${project_dir}\objects\enemy_lizard\Draw_0.gml
+Converted description /// @description draw
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Alarm_1.gml
+Converted description /// @description sticked reset
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Alarm_0.gml
+Converted description /// @description release
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Step_0.gml
+Converted description /// @description physics
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Collision_042f4dff-e5dd-4029-b6d8-5ff88a890043.gml
+Converted description /// @description reverse
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Collision_4c81f1c0-818a-4a2b-a0de-35cbc385e4a9.gml
+Converted description /// @description move outside
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Collision_59bb2330-b45b-4dac-8374-67da9399294f.gml
+Converted description /// @description move outside
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Collision_bcb5e715-c95f-402d-8974-b83e141628c7.gml
+Converted description /// @description stick to player
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack\Draw_0.gml
+Converted description /// @description draw
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Create_0.gml
+Converted description /// @description init
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Alarm_4.gml
+Converted description /// @description jump in air and reset jetpack
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Alarm_3.gml
+Converted description /// @description walktimer
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Alarm_2.gml
+Converted description /// @description stand on ground timer
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Alarm_1.gml
+Converted description /// @description sticked reset
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Alarm_0.gml
+Converted description /// @description release
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Step_0.gml
+Converted description /// @description physics
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Collision_a16f6895-e717-4486-9a53-c1bf3acf88c3.gml
+Converted description /// @description reverse
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Collision_228c717a-858f-499a-a1c1-0c1a92a4deec.gml
+Converted description /// @description move outside
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Collision_fef7e413-b383-41c5-b617-69353d24217f.gml
+Converted description /// @description move outside
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Collision_3a26c79a-12af-49ac-a927-67b1eed60b58.gml
+Converted description /// @description stick to player
+
+Converting GML script: ${project_dir}\objects\enemy_lizard_jetpack_alt\Draw_0.gml
+Converted description /// @description draw
+
+Game speed set to 60
+Added compatibility script 'action/action_end_game.gml'
+Added compatibility script 'action/action_fullscreen.gml'
+Added compatibility script 'action/action_kill_object.gml'
+Added compatibility script 'action/action_restart_game.gml'
+Added compatibility script 'action/action_set_alarm.gml'
+Added compatibility script 'background/background_create_from_surface.gml'
+Added compatibility script 'background/background_delete.gml'
+Added compatibility script 'background/background_exists.gml'
+Added compatibility script 'background/draw_background_ext.gml'
+Added compatibility script 'draw/draw_set_colour_write_enable.gml'
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script 'view/__view_get.gml'
+Added compatibility script 'view/__view_set.gml'
+Added compatibility script 'view/__view_set_internal.gml'
+Added compatibility script 'action/__init_action.gml'
+Added compatibility script 'background/__init_background.gml'
+Added compatibility script 'view/__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'

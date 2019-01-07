@@ -10,6 +10,8 @@ if state=0
   {
    if crouching=false
    {
+    if shoot_dir=180 {{image_ignore=spr_mc_idle set_image_stop(spr_mc_shoot_idle,0) image_xscale=-1 yyy=-15 xxx=-23 alarm[3]=20}}
+    if shoot_dir=0 {{image_ignore=spr_mc_idle set_image_stop(spr_mc_shoot_idle,0) image_xscale=1 yyy=-15 xxx=23 alarm[3]=20}}
     if shoot_dir=90 {image_ignore=spr_mc_idle set_image_stop(spr_mc_shoot_up,0) yyy=-35 alarm[3]=20}
    }
     else
@@ -22,11 +24,11 @@ if state=0
    ///running
    if shoot_dir=180 or shoot_dir=0
    {
-    image_ignore=spr_mc_run set_image_step(spr_mc_run_shoot_horizontal,0.2) xxx=image_xscale*30 yyy=-12 alarm[3]=20
+    image_ignore=spr_mc_run set_image_step(spr_mc_run_shoot_horizontal,0.2) xxx=image_xscale*25 yyy=-14 alarm[3]=20
    }
    if shoot_dir=135 or shoot_dir=45
    {
-    image_ignore=spr_mc_run set_image_step(spr_mc_run_shoot_diagnal,0.2) xxx=image_xscale*25 yyy=-30 alarm[3]=20
+    image_ignore=spr_mc_run set_image_step(spr_mc_run_shoot_diagnal,0.2) xxx=image_xscale*22 yyy=-36 alarm[3]=20
    }
   }
  }
@@ -34,9 +36,9 @@ if state=0
  {
   ///falling
   image_ignore=spr_mc_fall set_image_stop(spr_mc_fall_shoot,0)
-  if shoot_dir=0   or shoot_dir=180 {image_index=2}
-  if shoot_dir=135 or shoot_dir=45  {image_index=1}
-  if shoot_dir=225 or shoot_dir=315 {image_index=3}
+  if shoot_dir=0   or shoot_dir=180 {image_index=2 yyy=-15 xxx=image_xscale*25}
+  if shoot_dir=135 or shoot_dir=45  {image_index=1 yyy=-30 xxx=image_xscale*20}
+  if shoot_dir=225 or shoot_dir=315 {image_index=3 yyy=0 xxx=image_xscale*18}
   if shoot_dir=270 {yyy=20  image_index=4}
   if shoot_dir=90  {yyy=-50 image_index=0}
   

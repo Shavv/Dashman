@@ -1,4 +1,4 @@
-///blurr(80,5)
+///blurr(80,5,color)
 i=instance_create(x,y,BLUR)
 i.sprite_index=sprite_index
 i.image_xscale=image_xscale

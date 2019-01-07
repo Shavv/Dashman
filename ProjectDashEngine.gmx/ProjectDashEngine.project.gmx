@@ -33,6 +33,7 @@
         <sprite>sprites\spr_mc_run_shoot_horizontal</sprite>
         <sprite>sprites\spr_mc_run_shoot_diagnal</sprite>
         <sprite>sprites\spr_mc_crouch_shoot</sprite>
+        <sprite>sprites\spr_mc_shoot_idle</sprite>
       </sprites>
       <sprite>sprites\spr_mc_dodge_down</sprite>
       <sprite>sprites\spr_mc_run</sprite>
@@ -106,6 +107,21 @@
           <sprite>sprites\spr_mc_dash_down_shoot_135</sprite>
         </sprites>
       </sprites>
+      <sprite>sprites\sprite111</sprite>
+      <sprites name="giant arm">
+        <sprite>sprites\spr_arm_dodge</sprite>
+        <sprite>sprites\spr_backarm_dodge</sprite>
+        <sprite>sprites\spr_arm_punch_down</sprite>
+        <sprite>sprites\spr_arm_punch_diagnal_down</sprite>
+        <sprite>sprites\spr_arm_punch_diagnal_up</sprite>
+        <sprite>sprites\spr_arm_punch_straight</sprite>
+        <sprite>sprites\spr_arm_punch_up</sprite>
+        <sprite>sprites\spr_backarm_punch_down</sprite>
+        <sprite>sprites\spr_backarm_punch_diagnal_down</sprite>
+        <sprite>sprites\spr_backarm_punch_diagnal_up</sprite>
+        <sprite>sprites\spr_backarm_punch_straight</sprite>
+        <sprite>sprites\spr_backarm_punch_up</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_ai</sprite>
     <sprite>sprites\spr_block</sprite>
@@ -157,6 +173,7 @@
   <scripts name="scripts">
     <script>scripts\key_init.gml</script>
     <script>scripts\blurr.gml</script>
+    <script>scripts\afterimage.gml</script>
     <script>scripts\screen_shake.gml</script>
     <script>scripts\scr_shake_view.gml</script>
     <scripts name="enemy">
@@ -188,6 +205,7 @@
     <object>objects\obj_bullet</object>
     <objects name="FX">
       <object>objects\BLUR</object>
+      <object>objects\FX_AFTERIMAGE</object>
       <object>objects\FX_bullet_charge</object>
       <object>objects\FX_bullet_charge_2</object>
       <object>objects\FX_bullet_shot</object>
@@ -236,8 +254,8 @@
     <object>objects\obj_electric_field_strong</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\menu_powerup</room>
     <room>rooms\demo_room</room>
+    <room>rooms\menu_powerup</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
