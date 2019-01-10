@@ -407,6 +407,14 @@
             }
         },
         {
+            "Key": "1fe3bf28-bbfc-44c6-9314-80682a698365",
+            "Value": {
+                "id": "fe0805c9-e578-445c-af11-58947f1db3b9",
+                "resourcePath": "scripts\\sprite_laser_shooting\\sprite_laser_shooting.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "22406d17-f03d-47e6-9eef-108c23b483ce",
             "Value": {
                 "id": "6e4220d1-b67f-4419-ba2f-007c0f2779be",
@@ -2181,6 +2189,7 @@
         "83a98eae-7943-4744-a2f3-f742d2aeab43",
         "7a624c3e-f1b8-4461-9d38-2507a6db18a6",
         "1627352a-a599-48ff-8615-4528197c8f53",
+        "1fe3bf28-bbfc-44c6-9314-80682a698365",
         "653dfb31-3d56-46e4-9eae-c52d88ca07da",
         "a87893e0-099f-4bec-8753-46ee1697369f",
         "7bb4b71d-f111-4919-99ee-52dc66eb5cd9",

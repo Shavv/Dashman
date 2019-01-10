@@ -1,4 +1,4 @@
-/// @description Weapon3: Laser weapon
+///@description Draw
 #region Powerup0: Giantarms //PLAYER DRAWN IN THIS REGION//
 ///Powerup0:
 if global.powerup[1]=true
@@ -28,16 +28,16 @@ if global.powerup[1]=true
 
 #endregion
 #region Powerup1: Laser weapon
-if global.powerup[2]=true
+if !keyboard_check(key_shoot)
 {
- if state=0 or state=1
+ if (state=0 or state=1)
  {
-  if keyboard_check(key_shoot) or pad_shoot
+  if keyboard_check(key_shooti) or pad_shooti
   {
    scr_laser_weapon()
-   charge=true
   }
  }
 }
 #endregion
 
+draw_text(x,y,sprite_get_name(sprite_index))

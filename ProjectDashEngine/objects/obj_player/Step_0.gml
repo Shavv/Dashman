@@ -2,57 +2,7 @@
 key_init()
 
 ///movement and sprite
-#region Animation
-///MC animation
-if state=0
-{
- if place_meeting(x,y+1,obj_block) or (place_meeting(x,y+1,obj_jumpthru))
- {
-  if (keyboard_check(key_right) or pad_right) and (!keyboard_check(key_left) and !pad_left) {image_xscale= 1 set_image_step(spr_mc_run,0.3)}
-  if (keyboard_check(key_left) or pad_left) and (!keyboard_check(key_right) and !pad_right)   {image_xscale=-1 set_image_step(spr_mc_run,0.3)}
-  if (keyboard_check(key_left) and keyboard_check(key_right)) or (pad_left and pad_right) {set_image_step(spr_mc_idle,0.15)}
-  
-  if ((!keyboard_check(key_right) and (!pad_left)) and (!keyboard_check(key_left) and !pad_right))
-  {
-   ///crouching
-   if keyboard_check(key_down)
-   {
-    set_image_stop(spr_mc_crouch,0.3)
-    crouching=true
-   } 
-    else
-   {
-    set_image_step(spr_mc_idle,0.15)
-    crouching=false
-   }  
-  }
-   else
-  {
-   crouching=false
-  } 
- }
-  else
- {
-  crouching=false
-  image_xscale=imm
-  if (keyboard_check(key_right) or pad_right) {image_xscale= 1 imm= 1}
-  if (keyboard_check(key_left) or pad_left)   {image_xscale=-1 imm=-1}
-  if !keyboard_check(key_left) and !keyboard_check(key_right)
-  and pad_left and pad_right
-  {
-   image_xscale=imm
-  } 
-  set_image_step(spr_mc_fall,0.3)
- }
-}
 
-if state=1
-{
- if (keyboard_check(key_right) or pad_right) {imm= 1}
- if (keyboard_check(key_left) or pad_left)   {imm=-1} 
-}
-
-#endregion
 #region State0: Movement
 ///State0: Movement
 if state=0 or state=1 //ground movement
@@ -167,7 +117,7 @@ if state=0 and alarm[1]=-1
 
 if state=1
 {
- olddir=dir 
+ //olddir=dir 
  ///horizontal collsiion
  if place_meeting(x+hspd,y,obj_block)
  {
@@ -467,31 +417,13 @@ if state=10
  if (keyboard_check(key_down) or pad_down) and (keyboard_check(key_right) or pad_right) {shoot_dir=315}  //down right
  if crouching=true {if image_xscale=1 {shoot_dir=0 shoot_dir_r=0} else {shoot_dir=180 shoot_dir_r=180}}
  if place_meeting(x,y+1,obj_block) {if image_xscale=1 {if shoot_dir=270 or shoot_dir=225 or shoot_dir=315 {shoot_dir=0 shoot_dir_r=0}} else {if shoot_dir=270 or shoot_dir=225 or shoot_dir=315 {shoot_dir=180 shoot_dir_r=180}}}
-/*
-if keyboard_check_pressed(key_weapon) or pad_weapon_right
-{
- if charging=false
- {
-  weapon+=1
-  if weapon>weaponmax {weapon=0}
- }
-}
 
-if pad_weapon_left
-{
- if charging=false
- {
-  weapon-=1
-  if weapon<0 {weapon=weaponmax}
- }
-}
-*/
 #endregion
 #region Weapon0: Charge shooting
 ///Weapon0: Charge shooting
 if state=0 or state=1
 {
- if global.powerup[2]=false
+ if !keyboard_check(key_shooti) and !pad_shoot
  {
   if alarm[0]=-1
   {
@@ -568,6 +500,10 @@ if state=0 or state=1
   {
    charge=false
   }
+ }
+  else
+ {
+  charge=false	 
  }
 }
 
@@ -654,24 +590,6 @@ if weapon=234983
  }
 }
 
-#endregion
-#region Weapon3: Laser Weapon
-///Weapon3: Laser weapon
-if global.powerup[2]=true
-{ 
- if (keyboard_check(key_shooti) or pad_shooti)
- {
-  //
- }
-
- if !keyboard_check(key_shooti) and !pad_shooti
- {
-  charge=false
- }
-}
-
-
-///in draw event
 #endregion
 #region Powerup1: Giant Arms
 if state=1.5

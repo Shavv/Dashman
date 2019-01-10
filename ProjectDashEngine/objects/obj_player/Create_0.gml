@@ -9,10 +9,12 @@ hspd = 0;
 
 ///powerups
 global.powerup[0]=false //???
-global.powerup[1]=true //Giant arms
-global.powerup[2]=true //Laser weapon
+global.powerup[1]=false //Giant arms
+global.powerup[2]=false //
 global.powerup[3]=false //
-
+global.powerup[4]=false //
+global.powerup[5]=false //
+global.powerup[6]=false //
 
 //other
 movespeed=7
@@ -44,6 +46,8 @@ punchstate=0
 arm_alpha=0.8
 olddir=dir
 armxscale=1
+laserindex=0
+cameoutofdash=false
 ///stats
 mstamina=20
 stamina=mstamina
@@ -51,6 +55,8 @@ mhp=20
 hp=mhp
 
 //etc.
+xxx=0
+yyy=0
 oth=obj_cam
 image_ignore=spr_mc_hitbox
 
