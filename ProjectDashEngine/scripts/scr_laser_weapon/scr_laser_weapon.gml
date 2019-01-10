@@ -1,7 +1,7 @@
 //if stamina>=0.05
 {
  //stamina-=0.05 
- var max_length = 300;
+ var max_length = 700;
  var solid_object = obj_block;
  var laser_height=30;
  

@@ -158,9 +158,14 @@ if state=1
  ///stick to walls
  if (keyboard_check(key_dash) or pad_dash)
  {
-  if (keyboard_check(key_right) or pad_right) and place_meeting(x+1,y,obj_block) {state=1.5 exit;}
-  if (keyboard_check(key_left) or pad_left) and place_meeting(x-1,y,obj_block) {state=1.5 exit;}
-  if (keyboard_check(key_up) or pad_up) and place_meeting(x,y-1,obj_block) {state=1.5 exit;}
+  if (dir=0 or dir=45 or dir=315) and place_meeting(x+1,y,obj_block) {state=1.5 exit;}
+  if (dir=180 or dir=135 or dir=225) and place_meeting(x-1,y,obj_block) {state=1.5 exit;}
+  if (dir=90 or dir=135 or dir=45) and place_meeting(x,y-1,obj_block) {state=1.5 exit;}
+  
+  
+  //if (keyboard_check(key_right) or pad_right) and place_meeting(x+1,y,obj_block) {state=1.5 exit;}
+  //if (keyboard_check(key_left) or pad_left) and place_meeting(x+1,y,obj_block) {state=1.5 exit;}
+  //if (keyboard_check(key_up) or pad_up) and place_meeting(x,y-1,obj_block) {state=1.5 exit;}
  }
  
  //actual movement
@@ -423,7 +428,7 @@ if state=10
 ///Weapon0: Charge shooting
 if state=0 or state=1
 {
- if !keyboard_check(key_shooti) and !pad_shoot
+ if !keyboard_check(key_shooti) and !pad_shooti
  {
   if alarm[0]=-1
   {

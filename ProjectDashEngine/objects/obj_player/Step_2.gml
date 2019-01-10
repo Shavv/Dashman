@@ -31,7 +31,7 @@ if state=0
   if ((!keyboard_check(key_right) and (!pad_left)) and (!keyboard_check(key_left) and !pad_right))
   {
    ///crouching
-   if keyboard_check(key_down)
+   if keyboard_check(key_down) or pad_down
    {
     set_image_stop(spr_mc_crouch,0.3)
     crouching=true
